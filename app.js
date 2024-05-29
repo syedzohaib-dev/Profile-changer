@@ -8,29 +8,79 @@ const users = [
         description: 'My Self MERN Stack Developers are tasked with overseeing the complete software development lifecycle.',
     },
     {
-        imgUrl: 'https://iconape.com/wp-content/png_logo_vector/avatar-9.png',
+        imgUrl: 'https://cdn-icons-png.flaticon.com/512/2919/2919906.png',
         name: 'John Smith',
         designation: 'Python Developer',
-        description: 'A Python Web Developer is responsible for writing server-side web application logic.',
+        description: 'A Python Web Developer is responsible for writing server-side web application logic. responsible for writing server-side web application logic.',
     }, {
-        imgUrl: 'https://iconape.com/wp-content/png_logo_vector/avatar-11.png',
+        imgUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135823.png',
         name: 'Anna',
         designation: 'Word Press Developer',
-        description: 'WordPress developers design and implement websites for companies using the WordPress creation tool. ',
+        description: 'WordPress developers design and implement websites for companies using the WordPress creation tool. implement websites for companies using the WordPress creation tool.',
     }, {
-        imgUrl: 'https://www.shareicon.net/data/2016/05/26/771198_man_512x512.png',
+        imgUrl: 'https://avatars.githubusercontent.com/u/50479258?v=4',
         name: 'Usama Usman',
         designation: 'Software Engineer',
-        description: 'Software engineering is the branch of computer science that deals with the design, development, testing, and maintenance of software applications.',
+        description: 'Software engineering is the branch of computer science that deals with the design, development, testing, and maintenance of software applications. computer science that deals with the design, development, testing, and maintenance of software applications.',
     },
 ]
-// console.log(users)
+var userCounter = 0
+
+
 const previousHandler = () => {
-    console.log('previous handler')
+    if (userCounter > 0) {
+
+
+        userCounter--
+        // console.log(userCounter, '===>> userCounter')
+        // console.log(users[userCounter], '===>> konsa user')
+        document.querySelector('#myImage').style.backgroundImage = `url(${users[userCounter].imgUrl})`
+        document.querySelector('#myName').textContent = users[userCounter].name
+        document.querySelector('#myDesignation').textContent = users[userCounter].designation
+        document.querySelector('#myDescription').textContent = users[userCounter].description
+    } else {
+        userCounter = 3
+        // console.log(userCounter, '===>> userCounter')
+        // console.log(users[userCounter], '===>> konsa user')
+        document.querySelector('#myImage').style.backgroundImage = `url(${users[userCounter].imgUrl})`
+        document.querySelector('#myName').textContent = users[userCounter].name
+        document.querySelector('#myDesignation').textContent = users[userCounter].designation
+        document.querySelector('#myDescription').textContent = users[userCounter].description
+    }
 }
+
 const nextHandler = () => {
-    console.log('next handler')
+    if (userCounter < users.length - 1) {
+
+
+        userCounter++
+        // console.log(userCounter, '===>> userCounter')
+        // console.log(users[userCounter], '===>> konsa user')
+        document.querySelector('#myImage').style.backgroundImage = `url(${users[userCounter].imgUrl})`
+        document.querySelector('#myName').textContent = users[userCounter].name
+        document.querySelector('#myDesignation').textContent = users[userCounter].designation
+        document.querySelector('#myDescription').textContent = users[userCounter].description
+    } else {
+        userCounter = 0
+        // console.log(userCounter, '===>> userCounter')
+        // console.log(users[userCounter], '===>> konsa user')
+        document.querySelector('#myImage').style.backgroundImage = `url(${users[userCounter].imgUrl})`
+        document.querySelector('#myName').textContent = users[userCounter].name
+        document.querySelector('#myDesignation').textContent = users[userCounter].designation
+        document.querySelector('#myDescription').textContent = users[userCounter].description
+    }
+
 }
+
+
+
 function surprise() {
-    alert("oo i am surprice")
+    // alert("oo i am surprice")
+    Swal.fire({
+        title: 'OO I Am Surprise!',
+        // text: 'This is a SweetAlert surprise!',
+        icon: 'success',
+        confirmButtonText: '..Cool..'
+    });
 }
+
